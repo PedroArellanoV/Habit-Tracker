@@ -7,8 +7,14 @@
     <string name="sing_up">Sing up</string>
     <string name="email">Email</string>
     <string name="password">Password\n</string>
-    <string name="confirm_password">Confirm Password\n</string>
-    <string name="name">Full name\n</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="name">Full name</string>
+    <string name="subtitle">Create your account and begin building powerful habits.</string>
+
+    <!-- Login Fragment -->
     <string name="already">Already have an account?</string>
     <string name="login">Login</string>
+    <string name="forgot_the_password">Forgot the password?</string>
+
+
 </resources>
