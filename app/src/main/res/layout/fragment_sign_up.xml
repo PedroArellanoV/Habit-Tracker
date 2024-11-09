@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".SignUpFragment">
+    tools:context=".ui.singup.SignUpFragment">
 
 
     <TextView
@@ -17,7 +17,8 @@
         android:text="@string/sing_up"
         android:textSize="32sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <TextView
         android:id="@+id/tvSubtitle"
@@ -26,7 +27,8 @@
         android:text="@string/subtitle"
         app:layout_constraintTop_toBottomOf="@id/tvSingUp"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="4dp"/>
+        android:layout_marginTop="4dp"
+        style="@style/Text"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etName"
@@ -128,9 +130,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:fontFamily="@font/roboto_bold"
+        android:fontFamily="@font/lexend_bold"
         android:text="@string/sing_up"
         android:textSize="14sp"
+        android:textAllCaps="false"
         app:layout_constraintTop_toBottomOf="@id/etConfirmPassword" />
 
     <TextView
@@ -140,6 +143,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:text="@string/already"
+        style="@style/Text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnSignUp" />
@@ -151,7 +155,7 @@
         android:layout_marginTop="16dp"
         android:clickable="true"
         android:focusable="true"
-        android:fontFamily="@font/roboto_medium"
+        android:fontFamily="@font/lexend_bold"
         android:text="@string/login"
         android:textColor="#9C27B0"
         app:layout_constraintHorizontal_bias="0"
