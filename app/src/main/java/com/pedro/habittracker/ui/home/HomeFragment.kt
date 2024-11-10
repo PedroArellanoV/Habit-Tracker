@@ -1,16 +1,15 @@
 package com.pedro.habittracker.ui.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.ktx.Firebase
 import com.pedro.habittracker.R
 import com.pedro.habittracker.databinding.FragmentHomeBinding
-import com.pedro.habittracker.databinding.FragmentLogInBinding
 import com.pedro.habittracker.utils.FirebaseAuthSingleton
 
 
@@ -26,10 +25,25 @@ class HomeFragment : Fragment() {
 
     private fun initUI() {
 
+        topAppBarConfig()
+
 
         binding.btnSignOut.setOnClickListener {
             FirebaseAuthSingleton.auth.signOut()
             findNavController().navigate(R.id.action_homeFragment_to_signUpFragment)
+        }
+    }
+
+    private fun topAppBarConfig() {
+        binding.topAppBar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.top_bar_user -> {
+                    binding.drawerLayout.openDrawer(GravityCompat.END)
+                    true
+                }
+
+                else -> true
+            }
         }
     }
 

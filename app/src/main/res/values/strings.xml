@@ -16,5 +16,13 @@
     <string name="login">Login</string>
     <string name="forgot_the_password">Forgot the password?</string>
 
+    <!-- Menu -->
+    <string name="title">Habit Tracker</string>
+    <string name="add_habit">Add Habit</string>
+    <string name="add_new_habit">Add new habit.</string>
+    <string name="settings">Configuration</string>
+    <string name="open_settings">Open settings screen.</string>
+    <string name="user_information">User information</string>
+    <string name="open_user_information">Open user information.</string>
 
 </resources>
