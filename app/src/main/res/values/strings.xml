@@ -24,5 +24,6 @@
     <string name="open_settings">Open settings screen.</string>
     <string name="user_information">User information</string>
     <string name="open_user_information">Open user information.</string>
+    <string name="information_wrong">The email and/or password entered are incorrect. Please try again.</string>
 
 </resources>

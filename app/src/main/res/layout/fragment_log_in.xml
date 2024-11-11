@@ -18,6 +18,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tvWrongInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/information_wrong"
+        app:layout_constraintTop_toBottomOf="@id/tvLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#D91E1E"
+        android:visibility="gone"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etEmail"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
@@ -29,7 +39,7 @@
         app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvLogin"
+        app:layout_constraintTop_toBottomOf="@id/tvWrongInformation"
         app:startIconDrawable="@drawable/ic_email">
 
 

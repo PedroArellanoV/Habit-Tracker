@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.navigation.fragment.findNavController
 import com.pedro.habittracker.R
@@ -40,6 +41,7 @@ class LogInFragment : Fragment() {
 
         binding.tiEmail.addTextChangedListener { binding.etEmail.error = null }
         binding.tiPassword.addTextChangedListener { binding.etPassword.error = null }
+        binding.tvForgotPassword.isVisible = false
 
         if (!email.isNullOrEmpty() && !password.isNullOrEmpty()){
             FirebaseAuthSingleton.auth.signInWithEmailAndPassword(email, password)
@@ -49,7 +51,7 @@ class LogInFragment : Fragment() {
                         findNavController().navigate(R.id.action_logInFragment_to_homeFragment)
                     }else{
                         Log.i("AUTHENTICATION", task.exception.toString())
-                        createDialog()
+                        onInformationWrong()
                     }
                 }
         }else{
@@ -60,15 +62,10 @@ class LogInFragment : Fragment() {
         }
     }
 
-
-    private fun createDialog(){
-        val builder = AlertDialog.Builder(context)
-        builder.setTitle("Error")
-        builder.setMessage("The provided information does not match any registered user.")
-        builder.setPositiveButton("OK"){dialog, _->
-            dialog.cancel()
-        }
-        builder.show().create()
+    private fun onInformationWrong(){
+        binding.tvWrongInformation.isVisible = true
+        binding.etEmail.error = ""
+        binding.etPassword. error = ""
     }
 
     override fun onCreateView(
