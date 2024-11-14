@@ -1,21 +1,19 @@
 package com.pedro.habittracker.ui.singup
 
 import android.app.AlertDialog
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.pedro.habittracker.R
-import com.pedro.habittracker.data.User
+import com.pedro.habittracker.data.source.model.User
 import com.pedro.habittracker.databinding.FragmentSignUpBinding
-import com.pedro.habittracker.utils.FirebaseAuthSingleton
+import com.pedro.habittracker.ui.utils.FirebaseAuthSingleton
 
 
 class SignUpFragment : Fragment() {
@@ -58,8 +56,8 @@ class SignUpFragment : Fragment() {
 
         if (!username.isNullOrEmpty() && !email.isNullOrEmpty() && !password.isNullOrEmpty() && !confirmPassword.isNullOrEmpty()) {
             if (password == confirmPassword) {
-                val user = User(username, email, password)
-                firebaseAuth(user)
+                val user = User(name = username,email = email)
+                firebaseAuth(user, password)
             } else {
                 binding.etConfirmPassword.error = "Password doesn't match"
             }
@@ -76,9 +74,9 @@ class SignUpFragment : Fragment() {
         }
     }
 
-    private fun firebaseAuth(user: User) {
+    private fun firebaseAuth(user: User, password: String) {
         val auth = FirebaseAuthSingleton.auth
-        auth.createUserWithEmailAndPassword(user.email, user.password)
+        auth.createUserWithEmailAndPassword(user.email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Log.i("FIREBASE AUTHENTICATION", "userRegister: Success")

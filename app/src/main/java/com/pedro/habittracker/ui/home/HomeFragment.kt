@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.pedro.habittracker.R
 import com.pedro.habittracker.databinding.FragmentHomeBinding
-import com.pedro.habittracker.utils.FirebaseAuthSingleton
+import com.pedro.habittracker.ui.utils.FirebaseAuthSingleton
 
 
 class HomeFragment : Fragment() {

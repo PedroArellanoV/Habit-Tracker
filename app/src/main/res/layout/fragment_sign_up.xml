@@ -157,7 +157,7 @@
         android:focusable="true"
         android:fontFamily="@font/lexend_bold"
         android:text="@string/login"
-        android:textColor="#9C27B0"
+        android:textColor="@color/darkGreen"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toEndOf="@+id/tvAlready"
         app:layout_constraintTop_toBottomOf="@id/btnSignUp" />

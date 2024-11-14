@@ -3,5 +3,35 @@
     <style name="Base.Theme.HabitTracker" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnPrimary">@color/onPrimary</item>
+        <item name="colorOnSecondary">@color/onSecondary</item>
+
+        <item name="android:textColorPrimary">@color/white</item>
     </style>
+
+    <!-- Appbar Text style -->
+
+    <style name="AppbarTextStyle">
+        <item name="fontFamily">@font/lexend_bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/onPrimary</item>
+    </style>
+
+
+    <!-- Title style-->
+    <style name="Title">
+        <item name="android:fontFamily">@font/lexend_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <!-- Text style -->
+    <style name="Text">
+        <item name ="fontFamily">@font/lexend_regular</item>
+        <item name="android:textColor">@color/onPrimary</item>
+    </style>
+
 </resources>

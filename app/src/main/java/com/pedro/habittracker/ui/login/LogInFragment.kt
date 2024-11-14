@@ -1,19 +1,17 @@
 package com.pedro.habittracker.ui.login
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.pedro.habittracker.R
 import com.pedro.habittracker.databinding.FragmentLogInBinding
-import com.pedro.habittracker.utils.FirebaseAuthSingleton
+import com.pedro.habittracker.ui.utils.FirebaseAuthSingleton
 
 
 class LogInFragment : Fragment() {
@@ -39,22 +37,24 @@ class LogInFragment : Fragment() {
         val email = binding.tiEmail.text?.toString()
         val password = binding.tiPassword.text?.toString()
 
+        Log.i("LOGIN", "HOLA ME CLICKEARON")
+
         binding.tiEmail.addTextChangedListener { binding.etEmail.error = null }
         binding.tiPassword.addTextChangedListener { binding.etPassword.error = null }
         binding.tvForgotPassword.isVisible = false
 
-        if (!email.isNullOrEmpty() && !password.isNullOrEmpty()){
+        if (!email.isNullOrEmpty() && !password.isNullOrEmpty()) {
             FirebaseAuthSingleton.auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener{ task ->
-                    if(task.isSuccessful){
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
                         Log.i("AUTHENTICATION", "SUCCESS")
                         findNavController().navigate(R.id.action_logInFragment_to_homeFragment)
-                    }else{
+                    } else {
                         Log.i("AUTHENTICATION", task.exception.toString())
                         onInformationWrong()
                     }
                 }
-        }else{
+        } else {
             when {
                 email.isNullOrEmpty() -> binding.etEmail.error = "Uncompleted field"
                 password.isNullOrEmpty() -> binding.etPassword.error = "Uncompleted field"
@@ -62,10 +62,10 @@ class LogInFragment : Fragment() {
         }
     }
 
-    private fun onInformationWrong(){
+    private fun onInformationWrong() {
         binding.tvWrongInformation.isVisible = true
         binding.etEmail.error = ""
-        binding.etPassword. error = ""
+        binding.etPassword.error = ""
     }
 
     override fun onCreateView(

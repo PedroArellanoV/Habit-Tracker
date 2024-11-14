@@ -26,4 +26,7 @@
     <string name="open_user_information">Open user information.</string>
     <string name="information_wrong">The email and/or password entered are incorrect. Please try again.</string>
 
+    <!-- Add Edit Fragment -->
+    <string name="create_your_new_habit">Create your new habit.</string>
+
 </resources>

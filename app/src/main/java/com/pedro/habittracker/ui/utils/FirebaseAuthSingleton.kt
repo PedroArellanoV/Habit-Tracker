@@ -1,4 +1,4 @@
-package com.pedro.habittracker.utils
+package com.pedro.habittracker.ui.utils
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
